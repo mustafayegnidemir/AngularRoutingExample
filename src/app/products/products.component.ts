@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { products } from '../products';
 
 @Component({
   selector: 'app-products',
@@ -8,11 +9,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class ProductsComponent implements OnInit {
 
-  products= [
-    { name: 'Product 1'},
-    { name: 'Product 2'},
-    { name: 'Product 3'}
-  ];
+  products = products;
 
   constructor( private router : Router,
     private route: ActivatedRoute) { }
