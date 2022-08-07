@@ -22,6 +22,9 @@ const appRoutes: Routes= [
 
 ];
 
+// localhost:4200/products?page=1&order=price
+//query parameters
+
 @NgModule({
   declarations: [
     AppComponent,
