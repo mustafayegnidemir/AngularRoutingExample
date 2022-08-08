@@ -1,17 +1,33 @@
-<ul class="list-group">
-  <li *ngFor="let p of products" class="list-group-item">
-    {{p.name}}
-    <a [routerLink]="['/products', p.id]">detay</a>
-  </li>
-</ul>
+<div class="row">
+  <div class="col-md-12">
+
+    <table class=" table table-bordered table-primary">
+      <tr *ngFor="let p of products">
+        <td>{{p.id}}</td>
+        <td class="w-75">{{p.name}}</td>
+        <td [routerLink]="['/products', p.id]" class="btn btn-primary btn-sm">details
+        </td>
+        <td [routerLink]="['/products', p.id,'edit']" class="btn btn-secondary btn-sm ms-2">edit
+        </td>
+      </tr>
+    </table>
+
+  </div>
+</div>
 
 
-<p class="mt-4">
-  <a  class="btn btn-primary" routerLink="/products" [queryParams]="{page:1, order: 'bestselling'}">En Çok Satanlar</a>
 
+<div class="row">
+  <div class="col-md-12">
+    <a class="btn btn-primary" routerLink="/products" [queryParams]="{page:1, order: 'bestselling'}">En Çok Satanlar</a>
+    <a class="btn btn-primary ms-2" routerLink="/products" [queryParams]="{page:1, order:'newest'}">En Yeni Ürünler</a>
+    <button (click)="loadProducts()" class="btn btn-primary ms-2">Sayfayı Yenile</button>
 
-  <a class="btn btn-primary" routerLink="/products" [queryParams]="{page:1, order:'newest'}">En Yeni Ürünler</a>
+  </div>
+</div>
 
-
-  <button (click)="loadProducts()" class="btn btn-primary ml-2">Sayfayı Yenile</button>
-</p>
+<div class="row">
+  <div class="col-md-12">
+    <router-outlet></router-outlet>
+  </div>
+</div>
