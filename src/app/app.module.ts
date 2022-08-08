@@ -11,25 +11,10 @@ import { NotfoundComponent } from './notfound/notfound.component';
 import { ProductComponent } from './products/product/product.component';
 import { EditProductComponent } from './products/edit-product/edit-product.component';
 import { UserComponent } from './users/user/user.component';
-
-const appRoutes: Routes= [
-
-  { path:'', component: HomeComponent},   // localhost:4200
-  { path:'home', component: HomeComponent},
-  { path:'products', component:ProductsComponent, children: [
-    { path:':id', component:ProductComponent},
-    { path:':id/edit', component:EditProductComponent},
-
-    ]
-  },
-  { path:'users', component:UsersComponent, children: [
-    { path:':name', component:UserComponent}
-    ]
-  },
-  { path:'**', component:NotfoundComponent}
+import { AppRoutingModule } from './app-routing.module';
+import { AdminModule } from './admin/admin.module';
 
 
-];
 
 // localhost:4200/products?page=1&order=price
 //query parameters
@@ -48,7 +33,8 @@ const appRoutes: Routes= [
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes)
+    AdminModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
