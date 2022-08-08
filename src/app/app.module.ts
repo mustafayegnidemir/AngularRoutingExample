@@ -13,6 +13,7 @@ import { EditProductComponent } from './products/edit-product/edit-product.compo
 import { UserComponent } from './users/user/user.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AdminModule } from './admin/admin.module';
+import { AuthGuard } from './auth-guard.service';
 
 
 
@@ -36,7 +37,7 @@ import { AdminModule } from './admin/admin.module';
     AdminModule,
     AppRoutingModule,
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
