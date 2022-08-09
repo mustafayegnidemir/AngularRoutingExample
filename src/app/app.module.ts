@@ -14,6 +14,7 @@ import { UserComponent } from './users/user/user.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AdminModule } from './admin/admin.module';
 import { AuthGuard } from './auth-guard.service';
+import { LoginComponent } from './login/login.component';
 
 
 
@@ -30,7 +31,8 @@ import { AuthGuard } from './auth-guard.service';
     NotfoundComponent,
     ProductComponent,
     EditProductComponent,
-    UserComponent
+    UserComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
